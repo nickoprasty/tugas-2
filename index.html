@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="id">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, intial-scale=1.0">
+        <title>Validasi Password</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body>
+        <form id="registrationForm" onsubmit="return validasiNama()">
+            <h2>Formulir Pendaftaran</h2>
+            <div class="form-group">
+                <label for="nama">Nama Lengkap</label>
+                <span class="separator":></span>
+                <input type="text" name="nama" id="nama" required>
+            </div>
+            <div class="form-group">
+                <label for="alamat">Alamat</label>
+                <span class="separator">:</span>
+                <input type="text" name="alamat" id="alamat" required>
+            </div>
+            <div class="form-group">
+                <label for="tptlahir">Tempat Lahir</label>
+                <span class="separator">:</span>
+                <input type="text" name="tptlahir" id="tptlahir" required>
+            </div>
+            <div class="form-group">
+                <label for="tglLahir">Tanggal Lahir</label>
+                <span class="separator">:</span>
+                <input type="date" name="tglLahir" id="tglLahir" required>
+            </div>
+            <div class="form-group">
+                <label>Jenis Kelamin</label>
+                <span class="separator">:</span>
+                <div class="radio-group">
+                    <input type="radio" name="jk" value="laki-laki" required> Laki-Laki
+                    <input type="radio" name="jk" value="perempuan" required> Perempuan
+                </div>
+            </div>
+
+            <input type="submit" value="Daftar">
+        </form>
+        <script>
+            function validasiNama(){
+                let inputNama = document.getElementById("nama").value;
+                let pola = /^[a-zA-Z' ]+$/;
+
+                if(!pola.test(inputNama)){
+                    alert("Nama hanya boleh dengan huruf dan tandak petik satu ('')");
+                    return false;
+                }
+                alert("nama valid!!")
+                return true;
+            }
+        </script>
+        
+    </body>
+</html>
